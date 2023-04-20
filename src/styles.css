@@ -1,0 +1,76 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+body {
+    text-align: center;
+}
+/* --------------- 4.1 Header ------------------------- */
+h1 {
+    font-family: 'Gochi Hand', cursive;
+}
+.image {
+width: 30px;
+}
+
+countries {
+    display: flex;
+}
+
+.africa {
+    color: blue;
+}
+
+.americas {
+    color: green;
+}
+
+.asia {
+    color: red;
+}
+
+.europe {
+    color: yellow;
+}
+
+.oceania {
+    color: purple;
+}
+/*Africa: blauw*/
+/*Americas: groen*/
+/*Asia: rood*/
+/*Europe: geel*/
+/*Oceania: paars*/
+
+/* --------------- 4.2 Main ------------------- */
+
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
