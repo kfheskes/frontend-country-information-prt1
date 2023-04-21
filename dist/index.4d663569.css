@@ -17,8 +17,28 @@ h1 {
   width: 30px;
 }
 
-countries {
-  display: flex;
+.colorAfrica {
+  color: #00f;
+}
+
+.colorNorthAmerica {
+  color: #006400;
+}
+
+.colorSouthAmerica {
+  color: #90ee90;
+}
+
+.colorAsia {
+  color: red;
+}
+
+.colorEurope {
+  color: #ff0;
+}
+
+.colorOceania {
+  color: purple;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

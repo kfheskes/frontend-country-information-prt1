@@ -41,26 +41,30 @@ width: 30px;
 }
 
 countries {
-    display: flex;
+
 }
 
-.africa {
+.colorAfrica {
     color: blue;
 }
 
-.americas {
-    color: green;
+.colorNorthAmerica {
+    color: darkgreen;
 }
 
-.asia {
+.colorSouthAmerica {
+    color: lightgreen;
+}
+
+.colorAsia {
     color: red;
 }
 
-.europe {
+.colorEurope {
     color: yellow;
 }
 
-.oceania {
+.colorOceania {
     color: purple;
 }
 /*Africa: blauw*/

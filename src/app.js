@@ -14,7 +14,7 @@ import axios from "axios";
 // 9. afbeelding in header zetten van world_map
 // 10. de juiste font zoeken voor de tekst
 //11. zorg dat het resultaat naam(land), vlag en de zin(population) Has a population of [amount] people
-// 12. nadat het goed staat een forloop maken
+// 12. aparte functie maken voor de continent namen.
 //12. het resultaat in een li plaatsen in drie kolommen naast elkaar.
 //13. populatie sorteren met de sort
 //14. aparte functie maken voor de kleur tekst er zijn uitzonderingen dus een else
@@ -22,27 +22,44 @@ import axios from "axios";
 const countryList = document.getElementById('countryList')
 
 
-async function fechtCountries (){
+async function fechtCountries() {
     try {
         const response = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population,continents')
-            // .sort((a, b) => a.population - b.population)
+        // .sort((a, b) => a.population - b.population)
 
         console.log(response.data)
-        function getContinentColor (continentColor){
-            switch (continentColor.)
-        }
 
         countryList.innerHTML = `
-        <li> <img class="image" src="${response.data[0].flags.png}" alt="">  ${response.data[0].name.common} Has a population of ${response.data[0].population} </li>
+        <li> 
+        <div class="countryList">
+        <img class="image" src="${response.data[0].flags.png}" alt="">  ${response.data[0].name.common} </li> 
+        <h4 class="${getContinentColor(response.data[0].continents[0])}"></h4>
+        <p> Has a population of ${response.data[0].population} </p>
+        </div>
         `
-    }
-    catch (e){
+    } catch (e) {
         console.error(e)
     }
 }
 
+
 void fechtCountries();
 
 
+function getContinentColor(continentColor) {
+    switch (continentColor) {
+        case 'Africa':
+            return 'colorAfrica';
+        case 'North America':
+            return 'colorNorthAmerica';
+        case 'South America':
+            return 'colorSouthAmerica';
+        case 'Asia':
+            return 'colorAsia';
+        case 'Europe':
+            return 'colorEurope';
+        case 'Oceania':
+            return 'colorOceania';
+    }
+}
 
-console.log('Hallo daar!');
