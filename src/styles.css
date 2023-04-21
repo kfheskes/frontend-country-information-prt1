@@ -36,12 +36,16 @@ body {
 h1 {
     font-family: 'Gochi Hand', cursive;
 }
+
+/*Africa: blauw*/
+/*Americas: groen*/
+/*Asia: rood*/
+/*Europe: geel*/
+/*Oceania: paars*/
+
+/* --------------- 4.2 Main ------------------- */
 .image {
-width: 30px;
-}
-
-countries {
-
+    width: 30px;
 }
 
 .colorAfrica {
@@ -67,14 +71,6 @@ countries {
 .colorOceania {
     color: purple;
 }
-/*Africa: blauw*/
-/*Americas: groen*/
-/*Asia: rood*/
-/*Europe: geel*/
-/*Oceania: paars*/
-
-/* --------------- 4.2 Main ------------------- */
-
 
 
 /* ------------------------------- 5. Media Queries -------------------------------- */

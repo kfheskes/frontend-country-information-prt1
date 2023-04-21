@@ -577,24 +577,29 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 //13. populatie sorteren met de sort
 //14. aparte functie maken voor de kleur tekst er zijn uitzonderingen dus een else
 const countryList = document.getElementById("countryList");
-async function fechtCountries() {
+async function fetchCountries() {
     try {
         const response = await (0, _axiosDefault.default).get("https://restcountries.com/v3.1/all?fields=name,flags,population,continents");
-        // .sort((a, b) => a.population - b.population)
+        response.data.sort((a, b)=>{
+            return a.population - b.population;
+        });
         console.log(response.data);
-        countryList.innerHTML = `
+        countryList.innerHTML = response.data.map((country)=>{
+            return `
         <li> 
         <div class="countryList">
-        <img class="image" src="${response.data[0].flags.png}" alt="">  ${response.data[0].name.common} </li> 
-        <h4 class="${getContinentColor(response.data[0].continents[0])}"></h4>
-        <p> Has a population of ${response.data[0].population} </p>
+        <img class="image" src="${country.flags.png}" alt="Vlag van"/> 
+        <span class="${getContinentColor(country.continents[0])}"> ${country.name.common} </span> 
+        <p> a population of ${country.population}</p>
+        </li> 
         </div>
         `;
+        });
     } catch (e) {
         console.error(e);
     }
 }
-fechtCountries();
+fetchCountries();
 function getContinentColor(continentColor) {
     switch(continentColor){
         case "Africa":
