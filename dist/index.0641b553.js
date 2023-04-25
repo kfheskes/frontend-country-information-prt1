@@ -616,6 +616,17 @@ function getContinentColor(continentColor) {
             return "colorOceania";
     }
 }
+// prt2
+// const countrySearch = document.getElementById('searchCountry');
+async function fetchDataSearch() {
+    try {
+        const response = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
+        const country = response.data[0];
+    } catch (e) {
+        console.error(e);
+    }
+}
+fetchDataSearch();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

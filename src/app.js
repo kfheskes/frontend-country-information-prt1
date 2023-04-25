@@ -66,3 +66,20 @@ function getContinentColor(continentColor) {
     }
 }
 
+// prt2
+// const countrySearch = document.getElementById('searchCountry');
+
+async function fetchDataSearch () {
+    try {
+        const response = await axios.get('https://restcountries.com/v2/all')
+        const country = response.data[0]
+    }
+
+    catch (e) {
+        console.error(e)
+    }
+}
+
+void fetchDataSearch()
+
+
