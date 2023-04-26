@@ -617,11 +617,15 @@ function getContinentColor(continentColor) {
     }
 }
 // prt2
-// const countrySearch = document.getElementById('searchCountry');
+const countrySearch = document.getElementById("searchCountry");
 async function fetchDataSearch() {
     try {
         const response = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
-        const country = response.data[0];
+        console.log(response.data);
+        countrySearch.innerHTML = `
+        <li>
+            ${response.data[0].flag} ${response.data[0].name} ${reponse.data[0].name} is situated in ${response.data[0].subregion}. It has a population of ${response.data[0].population} people. The capital is ${response.data[0].capital} and you can pay with ${response.data[0].currencies[0].name}'s.
+            </li>`;
     } catch (e) {
         console.error(e);
     }
