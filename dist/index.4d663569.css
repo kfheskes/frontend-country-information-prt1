@@ -41,4 +41,13 @@ h1 {
   color: purple;
 }
 
+.flags {
+  width: 100px;
+  height: 100px;
+}
+
+.countryList {
+  list-style-type: none;
+}
+
 /*# sourceMappingURL=index.4d663569.css.map */

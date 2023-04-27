@@ -71,14 +71,16 @@ const countrySearch = document.getElementById('searchCountry');
 
 async function fetchDataSearch () {
     try {
-        const response = await axios.get('https://restcountries.com/v2/all')
-        console.log(response.data);
+        const result = await axios.get('https://restcountries.com/v2/all')
+
+        console.log(result.data);
 
         countrySearch.innerHTML =
         `
-        <li>
-            ${response.data[0].flag} ${response.data[0].name} ${reponse.data[0].name} is situated in ${response.data[0].subregion}. It has a population of ${response.data[0].population} people. The capital is ${response.data[0].capital} and you can pay with ${response.data[0].currencies[0].name}'s.
-            </li>`
+        <li class="countryList">
+          <span> <img class="flags" src="${result.data[0].flag}" alt="Vlag van" />  ${result.data[0].name}</span>
+        <p> ${result.data[0].name} is situated in ${result.data[0].subregion}. It has a population of ${result.data[0].population} people. The capital is ${result.data[0].capital} and you can pay with ${result.data[0].currencies[0].name}'s.</p>
+            </li class="countryList">`
     } catch (e) {
         console.error(e)
     }

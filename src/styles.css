@@ -72,5 +72,16 @@ h1 {
     color: purple;
 }
 
+/*prt 2*/
+
+.flags {
+    width: 100px;
+    height: 100px;
+}
+
+.countryList {
+    list-style-type: none;
+}
+
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
