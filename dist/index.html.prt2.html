@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   <link rel="stylesheet" href="/index.4d663569.css">
   <script src="/index.0641b553.js" defer=""></script>
-    <title>Title</title>
+    <title>Search countries</title>
 </head>
 <body>
 <nav>
@@ -13,11 +13,18 @@
     </li>
 </nav>
 <main>
-    <li>
-    <div>
-        <p id="searchCountry"></p>
-    </div>
-    </li>
+    <h1>Lets's search some countries</h1>
+    <img src="/img.35b9e482.png" alt="world">
+
+    <form action="submit-form" id="form-search">
+        <label for="input-search">
+            <input type="text" id="input-search" placeholder="Bijvoorbeeld Nederland of Peru">
+        </label>
+        <button type="submit" id="button-search">Zoek</button>
+    </form>
+
+    <div id="searchCountry"></div>
+
 </main>
 
 </body>

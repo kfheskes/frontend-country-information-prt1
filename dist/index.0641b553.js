@@ -618,20 +618,40 @@ function getContinentColor(continentColor) {
 }
 // prt2
 const countrySearch = document.getElementById("searchCountry");
+const searchButton = document.getElementById("form-search");
+searchButton.addEventListener("submit", handleSubmit);
+function handleSubmit(e) {
+    // zorgt ervoor dat de pagina niet ververst
+    e.preventDefault();
+    const queryField = document.getElementById("input-search");
+    fetchDataSearch(queryField);
+    queryField.value = "";
+// maakt invuld veld weer leeg.
+}
 async function fetchDataSearch() {
     try {
         const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
-        console.log(result.data);
+        const country = result.data;
+        console.log(country);
         countrySearch.innerHTML = `
         <li class="countryList">
-          <span> <img class="flags" src="${result.data[0].flag}" alt="Vlag van" />  ${result.data[0].name}</span>
-        <p> ${result.data[0].name} is situated in ${result.data[0].subregion}. It has a population of ${result.data[0].population} people. The capital is ${result.data[0].capital} and you can pay with ${result.data[0].currencies[0].name}'s.</p>
+          <span class="countryName"> <img class="flags" src="${country.flag}" alt="Vlag van"/>  ${country.name}</span>
+         <p> ${country.name} is situated in ${country.subregion}. It has a population of ${country.population} people. The capital is ${country.capital} ${createCurrency(country.currencies)}.</p>
             </li class="countryList">`;
     } catch (e) {
         console.error(e);
     }
 }
 fetchDataSearch();
+function createCurrency(currencies) {
+    let output = "and you can pay with ";
+    if (currencies.length === 2) return output + `${currencies[0].name} and ${currencies[1].name}'s `;
+    else return output + `${currencies[0].name}'s`;
+} // zoek functie psuedo
+ // titel en afbeelding zoeken.
+ // submitform aanmaken in HTML met zoek functie
+ // een id mee geven aan het form zodra er op enter wordt gedrukt inhoud zichtbaar wordt
+ // const element by id aanmaken
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

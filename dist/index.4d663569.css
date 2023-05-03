@@ -41,13 +41,48 @@ h1 {
   color: purple;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+#input-search {
+  width: 250px;
+  height: 30px;
+  border: 1px solid gray;
+  border-right-color: #0000;
+  border-radius: 10px;
+  margin-right: -12px;
+  padding: 8px;
+}
+
+#button-search {
+  width: 50px;
+  height: 30px;
+  text-transform: uppercase;
+  background-color: #a7d160;
+  border: 1px solid #a7d160;
+  border-radius: 0 8px 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .flags {
   width: 100px;
   height: 100px;
+  justify-content: center;
+  display: flex;
 }
 
 .countryList {
   list-style-type: none;
+}
+
+.countryName {
+  justify-content: center;
+  align-items: center;
+  font-family: Gochi Hand, cursive;
+  font-size: 25px;
+  display: flex;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
