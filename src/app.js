@@ -87,16 +87,16 @@ async function fetchDataSearch(countryQuery) {
 
     try {
         const result = await axios.get('https://restcountries.com/v2/all')
-        // const country = result.data;
+        const country = result.data[0];
         console.log(result.data);
 
-        countrySearch.innerHTML = result.data.map((country)=>{
-            return `
+        countrySearch.innerHTML =
+            `
         <li class="countryList">
           <span class="countryName"> <img class="flags" src="${country.flag}" alt="Vlag van"/>  ${country.name}</span>
          <p> ${country.name} is situated in ${country.subregion}. It has a population of ${country.population} people. The capital is ${country.capital} ${createCurrency(country.currencies)}.</p>
             </li class="countryList">`;
-        })
+
     } catch (e) {
         console.error(e)
     }
