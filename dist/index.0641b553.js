@@ -576,48 +576,53 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 //12. het resultaat in een li plaatsen in drie kolommen naast elkaar.
 //13. populatie sorteren met de sort
 //14. aparte functie maken voor de kleur tekst er zijn uitzonderingen dus een else
-const countryList = document.getElementById("countryList");
-async function fetchCountries() {
-    try {
-        const response = await (0, _axiosDefault.default).get("https://restcountries.com/v3.1/all?fields=name,flags,population,continents");
-        response.data.sort((a, b)=>{
-            return a.population - b.population;
-        });
-        console.log(response.data);
-        countryList.innerHTML = response.data.map((country)=>{
-            return `
-        <li> 
-        <div class="countryList">
-        <img class="image" src="${country.flags.png}" alt="Vlag van"/> 
-        <span class="${getContinentColor(country.continents[0])}"> ${country.name.common} </span> 
-        <p> a population of ${country.population}</p>
-        </li> 
-        </div>
-        `;
-        });
-    } catch (e) {
-        console.error(e);
-    }
-}
-fetchCountries();
-function getContinentColor(continentColor) {
-    switch(continentColor){
-        case "Africa":
-            return "colorAfrica";
-        case "North America":
-            return "colorNorthAmerica";
-        case "South America":
-            return "colorSouthAmerica";
-        case "Asia":
-            return "colorAsia";
-        case "Europe":
-            return "colorEurope";
-        case "Oceania":
-            return "colorOceania";
-    }
-}
+// const countryList = document.getElementById('countryList')
+//
+//
+// async function fetchCountries() {
+//     try {
+//         const response = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags,population,continents')
+//         response.data.sort((a, b) => {
+//             return a.population - b.population
+//         })
+//
+//         console.log(response.data)
+//
+//         countryList.innerHTML = response.data.map((country) => {
+//             return `
+//         <li>
+//         <div class="countryList">
+//         <img class="image" src="${country.flags.png}" alt="Vlag van"/>
+//         <span class="${getContinentColor(country.continents[0])}"> ${country.name.common} </span>
+//         <p> a population of ${country.population}</p>
+//         </li>
+//         </div>
+//         `
+//         })
+//     } catch (e) {
+//         console.error(e)
+//     }
+// }
+//
+// void fetchCountries();
+// function getContinentColor(continentColor) {
+//     switch (continentColor) {
+//         case 'Africa':
+//             return 'colorAfrica';
+//         case 'North America':
+//             return 'colorNorthAmerica';
+//         case 'South America':
+//             return 'colorSouthAmerica';
+//         case 'Asia':
+//             return 'colorAsia';
+//         case 'Europe':
+//             return 'colorEurope';
+//         case 'Oceania':
+//             return 'colorOceania';
+//     }
+// }
 // prt2
-const countrySearch = document.getElementById("searchCountry");
+const countrySearch = document.getElementById("searchResult");
 const searchButton = document.getElementById("form-search");
 searchButton.addEventListener("submit", handleSubmit);
 function handleSubmit(e) {
@@ -628,9 +633,10 @@ function handleSubmit(e) {
     queryField.value = "";
 // maakt invuld veld weer leeg.
 }
-async function fetchDataSearch(countryQuery) {
+async function fetchDataSearch(queryField) {
+    countrySearch.innterHTML = ``;
     try {
-        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
+        const result = await (0, _axiosDefault.default).get(`https://restcountries.com/v2/all${name}`);
         const country = result.data[0];
         console.log(result.data);
         countrySearch.innerHTML = `
